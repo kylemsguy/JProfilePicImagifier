@@ -8,6 +8,11 @@ import java.io.IOException;
 /**
  * Based on Hydrogen777's Profile Pic Imagifier
  * http://www.twocansandstring.com/forum/announcements/9066/
+ *
+ * Supported file types:
+ *  - PNG
+ *  - BMP
+ *  - TODO: figure them all out
  */
 public class TCaSImageConverter {
     private int[] argbAry;
