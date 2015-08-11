@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class Main {
 
-    public static String VERSION_STR = "v0.1-alpha";
+    public static String VERSION_STR = "v0.2-alpha";
 
     private static void usage(){
         System.err.println("Usage: java -jar JProfilePicImagifier.jar <imagename>");
