@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static String VERSION_STR = "v0.3-alpha";
+    public static String VERSION_STR = "v0.4-beta";
 
     private static void usage(){
         System.err.println("Usage:\tjava -jar JProfilePicImagifier.jar [IMAGEFILE]");
