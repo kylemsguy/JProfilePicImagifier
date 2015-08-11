@@ -1,20 +1,36 @@
 package com.kylemsguy;
 
-import java.util.Scanner;
+import java.io.IOException;
 
 public class Main {
 
     private static void usage(){
-        System.out.println("Usage: java -jar JProfilePicImagifier.jar <imagename>.bmp");
-        System.out.println("Converts a 32x32 bitmap to the TCaS format and prints the result to stdout");
-        System.out.println("\tNote: the image MUST be 32x32, or things may go wrong");
-        System.out.println("\t(TODO: throw exception if image size not as expected");
+        System.err.println("Usage: java -jar JProfilePicImagifier.jar <imagename>");
+        System.err.println("Converts a 32x32 image file to the TCaS format and prints the result to stdout");
+        System.err.println("Supported file types:");
+        System.err.println("\tTODO: Figure out what file types supported");
+        System.err.println("\nNote: the image MUST be 32x32, or things may go wrong");
     }
 
     public static void main(String[] args) {
-        if(args.length != 2){
+        if(args.length != 1){
             usage();
+            System.exit(1);
         }
-	    Scanner s = new Scanner(System.in);
+	    String filename = args[0];
+        System.err.println("Processing file...");
+        TCaSImageConverter ic = null;
+        try {
+            ic = new TCaSImageConverter(filename);
+        } catch (IOException e){
+            e.printStackTrace();
+            System.exit(1);
+        }
+
+        String data = ic.convertToTImg();
+        System.err.println("Done!\n");
+        System.err.println("Please refer to the README for what to do with the following data:");
+        System.err.println();
+        System.out.println(data);
     }
 }
