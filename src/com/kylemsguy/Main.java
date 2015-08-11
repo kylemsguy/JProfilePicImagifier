@@ -4,6 +4,8 @@ import java.io.IOException;
 
 public class Main {
 
+    public static String VERSION_STR = "v0.1-alpha";
+
     private static void usage(){
         System.err.println("Usage: java -jar JProfilePicImagifier.jar <imagename>");
         System.err.println("Converts a 32x32 image file to the TCaS format and prints the result to stdout");
@@ -15,6 +17,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        System.err.println("TCaS Profile Pic Converter " + VERSION_STR);
         if(args.length != 1){
             usage();
             System.exit(1);
