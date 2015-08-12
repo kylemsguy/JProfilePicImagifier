@@ -16,4 +16,5 @@ To add the bookmarklet to the page, drag [this link](javascript:var imagedatatag
 
 
 Screenshot:
+
 ![Screenshot of JProfilePicImagifier](http://i.imgur.com/nVphfU2.png)
