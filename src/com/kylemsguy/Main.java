@@ -21,7 +21,8 @@ public class Main {
         System.err.println("\t- BMP");
         System.err.println("\t- GIF");
         System.err.println("\t- JPG");
-        System.err.println("\tTODO: Figure out what file types supported");
+        // TODO: Figure out what file types supported
+        System.err.println("\tAnd more!");
         System.err.println("\nNote: the image MUST be 32x32, or things may go wrong");
     }
 
