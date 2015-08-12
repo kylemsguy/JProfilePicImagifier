@@ -23,6 +23,9 @@ public class Main {
         System.err.println("\nNote: the image MUST be 32x32, or things may go wrong");
     }
 
+    /**
+     * (╯°□°）╯︵ ┻━┻)
+     */
     public static void startGUI(){
         final JFrame frame = new JFrame("TCaS Profile Pic Converter " + VERSION_STR);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
