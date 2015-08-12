@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static String VERSION_STR = "v0.4-beta";
+    public static String VERSION_STR = "v0.5-beta";
 
     private static void usage(){
         System.err.println("Usage:\tjava -jar JProfilePicImagifier.jar [IMAGEFILE]");
@@ -33,18 +33,21 @@ public class Main {
         JPanel inputPanel = new JPanel(new BorderLayout());
         Border inputBorder = BorderFactory.createTitledBorder("Input");
         inputPanel.setBorder(inputBorder);
-        inputPanel.setMaximumSize(new java.awt.Dimension(352, 75));
+        inputPanel.setMaximumSize(new java.awt.Dimension(475, 85));
         inputPanel.setMinimumSize(new java.awt.Dimension(322, 50));
-        inputPanel.setPreferredSize(new java.awt.Dimension(322, 75));
+        inputPanel.setPreferredSize(new java.awt.Dimension(475, 85));
 
         final JFilePicker filePicker = new JFilePicker(20);
         inputPanel.add(filePicker, BorderLayout.LINE_START);
+
+        final RGBFrame rgbFrame = new RGBFrame();
+        inputPanel.add(rgbFrame);
 
         JPanel outputPanel = new JPanel(new GridLayout(0, 1));
         Border outputBorder = BorderFactory.createTitledBorder("Output");
         outputPanel.setBorder(outputBorder);
 
-        final JTextArea outputCode = new JTextArea(10, 20);
+        final JTextArea outputCode = new JTextArea(20, 20);
         outputCode.setLineWrap(true);
         outputCode.setWrapStyleWord(true);
         JScrollPane scrollPane = new JScrollPane(outputCode);
@@ -65,10 +68,12 @@ public class Main {
                     }
                     try {
                         TCaSImageConverter converter = new TCaSImageConverter(file);
-                        String output = converter.convertToTImg();
+                        String output = converter.convertToTImg(rgbFrame.getRGB());
                         outputCode.setText(output);
                     } catch (IOException | NullPointerException ex) {
                         JOptionPane.showMessageDialog(frame, "Error: Invalid File\n" + ex.toString());
+                    } catch(IllegalStateException | NumberFormatException ex){
+                        JOptionPane.showMessageDialog(frame, ex.toString());
                     }
                 }
             }

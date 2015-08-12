@@ -42,9 +42,13 @@ public class TCaSImageConverter {
     }
 
     public String convertToTImg(){
+        return convertToTImg(BACKGROUND_COLOUR);
+    }
+
+    public String convertToTImg(int[] bgcolour){
         StringBuilder sb = new StringBuilder();
         for(int i = 0; i < argbAry.length - 1; i++){
-            int[] rgb = ARGB2RGB(argbAry[i], BACKGROUND_COLOUR);
+            int[] rgb = ARGB2RGB(argbAry[i], bgcolour);
 
             sb.append(rgb[0] / 4);
             sb.append("|");
@@ -55,7 +59,7 @@ public class TCaSImageConverter {
 
         }
 
-        int[] lastPixel = ARGB2RGB(argbAry[argbAry.length - 1], BACKGROUND_COLOUR);
+        int[] lastPixel = ARGB2RGB(argbAry[argbAry.length - 1], bgcolour);
 
         sb.append(lastPixel[0] / 4);
         sb.append("|");
