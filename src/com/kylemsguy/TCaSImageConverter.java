@@ -79,6 +79,7 @@ public class TCaSImageConverter {
     public static int[] ARGB2RGB(int argb, int[] background){
         int alpha = argb >> 24 & 255;
 
+        // bitwise AND with 255 because we only want the lower 8 bits.
         int red = argb >> 16 & 255;
         int green = argb >> 8 & 255;
         int blue = argb & 255;
