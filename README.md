@@ -4,6 +4,8 @@ Converts an image into TCaS's ASCII format. The image _MUST_ be 32x32.
 Supports various image formats:
  - PNG
  - BMP
+ - JPG
+ - GIF
  - And possibly more!
  
 To add the generated image to your profile, go to your [profile page](http://www.twocansandstring.com/profile/draw), and use this bookmarklet to import the image data into the page. All you need to do then is to simply click "OK" and you're done!
